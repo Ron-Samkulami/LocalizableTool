@@ -117,7 +117,7 @@ func readFiles( _ fileStr : String, _ logMsg: Binding<String>, _ readXib : Bool)
         let fullPath = home+"/"+fileName
         var regPattern = "[^%]@\"[^\"]*[\\u4E00-\\u9FA5]+[^\"\\n]*?\""
         if readXib {
-            regPattern = "\"[\\u4E00-\\u9FA5]+[^\"\\n]*?\""
+            regPattern = "\" *[\\u4E00-\\u9FA5]+[^\"\\n]*?\""  //"开头，接任意数量空白符号，接任意长度中文，接任意多个除" \n之外的的字符，"结尾
         }
         
         let contentStr = try? NSString.init(contentsOfFile: fullPath, encoding: String.Encoding.utf8.rawValue)
@@ -220,7 +220,7 @@ func generateTargetFile(_ logMsg: Binding<String>) {
         for subStr in allLineStrings {
             let index = (allLineStrings as NSArray).index(of: subStr)
             let originalStr = originalArr.object(at: index)
-            resultStr.append("\(originalStr as! String) = \(subStr)\n")
+            resultStr.append("\(originalStr as! String) = \(subStr);\n")
         }
         
         do {
