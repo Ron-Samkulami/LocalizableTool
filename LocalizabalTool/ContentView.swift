@@ -7,8 +7,8 @@
 
 import SwiftUI
 
- var importPath = ""
- var exportOriginalPath = ""
+var importPath = ""
+var exportOriginalPath = ""
 var exportLocalizeStrPath = ""
 var originalArr = NSMutableArray()
 var translatedArr = NSMutableArray()
@@ -17,7 +17,7 @@ struct ContentView: View {
     var importFileView = FileOpenView(filePathType.filePathTypeImport)
     var exportFileView  = FileOpenView(filePathType.filePathTypeExportOriginal)
     @State var logMsg :String = ""
-    
+    @State var searchKey :String = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -56,6 +56,18 @@ struct ContentView: View {
                 }
             })
             
+            HStack(alignment: .center, spacing: 10) {
+                Text("查找包含指定内容的文件：").padding(EdgeInsets.init(top: 20, leading: 20, bottom: 20, trailing: 0))
+                TextField("输入查找关键字", text:$searchKey)
+                    .cornerRadius(6.0)
+                Button("开始查找") {
+                    searchContent(fileFolder: importPath, searchKey: searchKey, result: $logMsg, searchXib: false)
+                }
+                Button("只查找xib") {
+                    searchContent(fileFolder: importPath, searchKey: searchKey, result: $logMsg, searchXib: true)
+                }
+            }
+            
             ScrollView {
                 TextField("", text:$logMsg)
                     .cornerRadius(6.0)
@@ -70,16 +82,19 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+//        NavigationView {
+            ContentView()
+//        }
+        
     }
 }
 
 //!< 读取文件
 func readFiles( _ fileStr : String, _ logMsg: Binding<String>, _ readXib : Bool) {
     sleep(1)
-//    DispatchQueue.main.async {
-        logMsg.wrappedValue = "正在查找，请稍候..."
-//    }
+    //    DispatchQueue.main.async {
+    logMsg.wrappedValue = "正在查找，请稍候..."
+    //    }
     
     
     let resultInAllFile = NSMutableArray()
@@ -113,7 +128,7 @@ func readFiles( _ fileStr : String, _ logMsg: Binding<String>, _ readXib : Bool)
     
     while let fileName = fileEnum.nextObject() as? String {
         
-//        let resultInOneFile = NSMutableArray()
+        //        let resultInOneFile = NSMutableArray()
         let fullPath = home+"/"+fileName
         var regPattern = "[^%]@\"[^\"]*[\\u4E00-\\u9FA5]+[^\"\\n]*?\""
         if readXib {
@@ -123,16 +138,16 @@ func readFiles( _ fileStr : String, _ logMsg: Binding<String>, _ readXib : Bool)
         let contentStr = try? NSString.init(contentsOfFile: fullPath, encoding: String.Encoding.utf8.rawValue)
         let regular = try? NSRegularExpression(pattern: regPattern, options: .caseInsensitive)
         let matches = regular?.matches(in: contentStr! as String, options: .reportProgress, range: NSMakeRange(0, contentStr?.length ?? 0))
-//        print(matches?.count)
+        //        print(matches?.count)
         if matches != nil {
             for match in matches! {
                 let range = match.range
                 var subStr = contentStr?.substring(with: range)
                 
-
+                
                 if !readXib {
                     //去除开头的 *@
-    //                subStr?.remove(at: subStr!.startIndex)
+                    //                subStr?.remove(at: subStr!.startIndex)
                     let removeRange = subStr!.startIndex..<(subStr?.index(subStr!.startIndex, offsetBy: 2))!
                     subStr?.removeSubrange(removeRange)
                 }
@@ -158,8 +173,67 @@ func readFiles( _ fileStr : String, _ logMsg: Binding<String>, _ readXib : Bool)
         resultStr.append(subStr as! String)
         resultStr.append("\n")
     }
-
+    
     logMsg.wrappedValue = "查找完成：共\(chineseCount)个中文字符串"+"\n"+resultStr
+    
+}
+
+
+//!< 查找xib中的指定内容
+func searchContent( fileFolder fileStr : String, searchKey keyStr : String, result logMsg: Binding<String>, searchXib readXib : Bool) {
+    sleep(1)
+    logMsg.wrappedValue = "正在查找，请稍候..."
+
+    let resultInAllFile = NSMutableArray()
+    let home = (fileStr as NSString).expandingTildeInPath
+    
+    //筛选出xib文件
+    let mgr = FileManager.default
+    let directNum = mgr.enumerator(atPath: home)
+    let fileArr = NSMutableArray()
+    
+    while let fileName = directNum?.nextObject() as? NSString {
+        if readXib {
+            if fileName.pathExtension == "xib" {
+                fileArr.add(fileName)
+            }
+        } else {
+            for fileExt in ["m","h"] {
+                if fileName.pathExtension == fileExt{
+                    fileArr.add(fileName)
+                }
+            }
+        }
+    }
+    
+    
+    //遍历每个文件，正则匹配关键字
+    let fileEnum = fileArr.objectEnumerator()
+    var fileCount = 0
+    
+    while let fileName = fileEnum.nextObject() as? String {
+        let fullPath = home+"/"+fileName
+        
+        let contentStr = try? NSString.init(contentsOfFile: fullPath, encoding: String.Encoding.utf8.rawValue)
+        let regular = try? NSRegularExpression(pattern: keyStr, options: .caseInsensitive)
+        let matches = regular?.matches(in: contentStr! as String, options: .reportProgress, range: NSMakeRange(0, contentStr?.length ?? 0))
+        if !(matches?.isEmpty ?? true) {
+            if resultInAllFile.contains(fileName) {
+                continue
+            }
+            resultInAllFile.add(fileName)
+            fileCount+=1
+        }
+        
+    }
+    //获取结果
+    var resultStr = String()
+    for subStr in resultInAllFile {
+        resultStr.append(subStr as! String)
+        resultStr.append("\n")
+    }
+    
+    logMsg.wrappedValue = "查找完成：共\(fileCount)个文件包含指定字符串"+"\n"+resultStr
     
 }
 
@@ -200,7 +274,7 @@ func openOriginalFile(_ logMsg: Binding<String>) {
     }
     
     originalArr = resultInAllFile
-
+    
     logMsg.wrappedValue = "导入原文成功\n"+resultStr
 }
 
@@ -230,7 +304,7 @@ func generateTargetFile(_ logMsg: Binding<String>) {
         }
         logMsg.wrappedValue = "保存成功\(allLineStrings.count) in total \n"+resultStr
     }
-
+    
 }
 
 
@@ -281,9 +355,9 @@ struct FileOpenView : View {
     @State var pathStr :String = ""
     
     init(_ fileType: filePathType) {
-       aType = fileType
-       _typeStr = State(initialValue: getFilePathType(fileType))
-   }
+        aType = fileType
+        _typeStr = State(initialValue: getFilePathType(fileType))
+    }
     
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
@@ -310,7 +384,7 @@ struct FileOpenView : View {
         }
     }
     
-     
+    
 }
 
 
