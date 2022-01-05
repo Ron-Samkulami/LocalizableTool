@@ -11,6 +11,8 @@
 		82627E0F26CFADDB0073983A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E0E26CFADDB0073983A /* ContentView.swift */; };
 		82627E1126CFADDB0073983A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1026CFADDB0073983A /* Assets.xcassets */; };
 		82627E1426CFADDB0073983A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1326CFADDB0073983A /* Preview Assets.xcassets */; };
+		82BB070E275E0D0F00E7E206 /* FileOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB070D275E0D0F00E7E206 /* FileOpenView.swift */; };
+		82BB0712275E0E0300E7E206 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB0711275E0E0300E7E206 /* Func.swift */; };
 		82C5935B26D4AB6800123429 /* translateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C5935A26D4AB6800123429 /* translateTool.swift */; };
 		82C5935F26D4E2BE00123429 /* RSGoogleTranslate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C5935E26D4E2BE00123429 /* RSGoogleTranslate.m */; };
 /* End PBXBuildFile section */
@@ -23,6 +25,8 @@
 		82627E1326CFADDB0073983A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82627E1526CFADDB0073983A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82627E1626CFADDB0073983A /* LocalizabalTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalizabalTool.entitlements; sourceTree = "<group>"; };
+		82BB070D275E0D0F00E7E206 /* FileOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOpenView.swift; sourceTree = "<group>"; };
+		82BB0711275E0E0300E7E206 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 		82C5935A26D4AB6800123429 /* translateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = translateTool.swift; sourceTree = "<group>"; };
 		82C5935C26D4E2BE00123429 /* LocalizabalTool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocalizabalTool-Bridging-Header.h"; sourceTree = "<group>"; };
 		82C5935D26D4E2BE00123429 /* RSGoogleTranslate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSGoogleTranslate.h; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		82627E0B26CFADDB0073983A /* LocalizabalTool */ = {
 			isa = PBXGroup;
 			children = (
+				82BB0710275E0DDE00E7E206 /* Func */,
+				82BB070F275E0D7400E7E206 /* Views */,
 				82627E0C26CFADDB0073983A /* LocalizabalToolApp.swift */,
 				82627E0E26CFADDB0073983A /* ContentView.swift */,
 				82627E1026CFADDB0073983A /* Assets.xcassets */,
@@ -79,6 +85,22 @@
 				82627E1326CFADDB0073983A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		82BB070F275E0D7400E7E206 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				82BB070D275E0D0F00E7E206 /* FileOpenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		82BB0710275E0DDE00E7E206 /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				82BB0711275E0E0300E7E206 /* Func.swift */,
+			);
+			path = Func;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +197,9 @@
 				82627E0F26CFADDB0073983A /* ContentView.swift in Sources */,
 				82627E0D26CFADDB0073983A /* LocalizabalToolApp.swift in Sources */,
 				82C5935F26D4E2BE00123429 /* RSGoogleTranslate.m in Sources */,
+				82BB0712275E0E0300E7E206 /* Func.swift in Sources */,
 				82C5935B26D4AB6800123429 /* translateTool.swift in Sources */,
+				82BB070E275E0D0F00E7E206 /* FileOpenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
