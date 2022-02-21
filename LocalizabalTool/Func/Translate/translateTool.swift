@@ -171,6 +171,7 @@ class TranslateTool: NSObject {
                     
                     DispatchQueue.main.async {
                         let message:String = result.object(forKey: "msg") as! String
+                        print(message)
                     }
                     
                 } catch {

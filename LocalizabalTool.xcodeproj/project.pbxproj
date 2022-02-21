@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31A9B6C97A1F25BAFE162B6B /* Pods_LocalizabalTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BFD8D33CD9E04704574262 /* Pods_LocalizabalTool.framework */; };
+		824DD3C627BF443B00E0E279 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824DD3C527BF443B00E0E279 /* SearchPage.swift */; };
+		824DD3DA27BF721300E0E279 /* UITrialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824DD3D927BF721300E0E279 /* UITrialPage.swift */; };
 		82627E0D26CFADDB0073983A /* LocalizabalToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E0C26CFADDB0073983A /* LocalizabalToolApp.swift */; };
 		82627E0F26CFADDB0073983A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E0E26CFADDB0073983A /* ContentView.swift */; };
 		82627E1126CFADDB0073983A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82627E1026CFADDB0073983A /* Assets.xcassets */; };
@@ -14,10 +17,17 @@
 		82BB070E275E0D0F00E7E206 /* FileOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB070D275E0D0F00E7E206 /* FileOpenView.swift */; };
 		82BB0712275E0E0300E7E206 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB0711275E0E0300E7E206 /* Func.swift */; };
 		82C5935B26D4AB6800123429 /* translateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C5935A26D4AB6800123429 /* translateTool.swift */; };
-		82C5935F26D4E2BE00123429 /* RSGoogleTranslate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C5935E26D4E2BE00123429 /* RSGoogleTranslate.m */; };
+		82E785F227C334ED00F7AF5A /* SearchChinesePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E785F127C334ED00F7AF5A /* SearchChinesePage.swift */; };
+		82E785F427C33A5600F7AF5A /* PathPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E785F327C33A5600F7AF5A /* PathPage.swift */; };
+		82E785F827C3926700F7AF5A /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E785F727C3926700F7AF5A /* Macro.swift */; };
+		82E785FA27C39AF500F7AF5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E785F927C39AF500F7AF5A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421E4B7B7625C4D1A45D1797 /* Pods-LocalizabalTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalizabalTool.debug.xcconfig"; path = "Target Support Files/Pods-LocalizabalTool/Pods-LocalizabalTool.debug.xcconfig"; sourceTree = "<group>"; };
+		60BFD8D33CD9E04704574262 /* Pods_LocalizabalTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalizabalTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		824DD3C527BF443B00E0E279 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
+		824DD3D927BF721300E0E279 /* UITrialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITrialPage.swift; sourceTree = "<group>"; };
 		82627E0926CFADDB0073983A /* LocalizabalTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalizabalTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82627E0C26CFADDB0073983A /* LocalizabalToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizabalToolApp.swift; sourceTree = "<group>"; };
 		82627E0E26CFADDB0073983A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,8 +39,11 @@
 		82BB0711275E0E0300E7E206 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 		82C5935A26D4AB6800123429 /* translateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = translateTool.swift; sourceTree = "<group>"; };
 		82C5935C26D4E2BE00123429 /* LocalizabalTool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocalizabalTool-Bridging-Header.h"; sourceTree = "<group>"; };
-		82C5935D26D4E2BE00123429 /* RSGoogleTranslate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSGoogleTranslate.h; sourceTree = "<group>"; };
-		82C5935E26D4E2BE00123429 /* RSGoogleTranslate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSGoogleTranslate.m; sourceTree = "<group>"; };
+		82E785F127C334ED00F7AF5A /* SearchChinesePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchChinesePage.swift; sourceTree = "<group>"; };
+		82E785F327C33A5600F7AF5A /* PathPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPage.swift; sourceTree = "<group>"; };
+		82E785F727C3926700F7AF5A /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		82E785F927C39AF500F7AF5A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F6D115E599E893BCF4734A7F /* Pods-LocalizabalTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalizabalTool.release.xcconfig"; path = "Target Support Files/Pods-LocalizabalTool/Pods-LocalizabalTool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A9B6C97A1F25BAFE162B6B /* Pods_LocalizabalTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1191F74795CDDE945061E9BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60BFD8D33CD9E04704574262 /* Pods_LocalizabalTool.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		718104F7137CCE5525CAD36B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				421E4B7B7625C4D1A45D1797 /* Pods-LocalizabalTool.debug.xcconfig */,
+				F6D115E599E893BCF4734A7F /* Pods-LocalizabalTool.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		82627E0026CFADDA0073983A = {
 			isa = PBXGroup;
 			children = (
 				82627E0B26CFADDB0073983A /* LocalizabalTool */,
 				82627E0A26CFADDB0073983A /* Products */,
+				718104F7137CCE5525CAD36B /* Pods */,
+				1191F74795CDDE945061E9BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,15 +98,13 @@
 			children = (
 				82BB0710275E0DDE00E7E206 /* Func */,
 				82BB070F275E0D7400E7E206 /* Views */,
+				82E785F527C3654400F7AF5A /* Pages */,
 				82627E0C26CFADDB0073983A /* LocalizabalToolApp.swift */,
 				82627E0E26CFADDB0073983A /* ContentView.swift */,
 				82627E1026CFADDB0073983A /* Assets.xcassets */,
 				82627E1526CFADDB0073983A /* Info.plist */,
 				82627E1626CFADDB0073983A /* LocalizabalTool.entitlements */,
 				82627E1226CFADDB0073983A /* Preview Content */,
-				82C5935A26D4AB6800123429 /* translateTool.swift */,
-				82C5935D26D4E2BE00123429 /* RSGoogleTranslate.h */,
-				82C5935E26D4E2BE00123429 /* RSGoogleTranslate.m */,
 				82C5935C26D4E2BE00123429 /* LocalizabalTool-Bridging-Header.h */,
 			);
 			path = LocalizabalTool;
@@ -98,9 +129,31 @@
 		82BB0710275E0DDE00E7E206 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				82E785F627C3726B00F7AF5A /* Translate */,
 				82BB0711275E0E0300E7E206 /* Func.swift */,
+				82E785F727C3926700F7AF5A /* Macro.swift */,
+				82E785F927C39AF500F7AF5A /* Extensions.swift */,
 			);
 			path = Func;
+			sourceTree = "<group>";
+		};
+		82E785F527C3654400F7AF5A /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				82E785F327C33A5600F7AF5A /* PathPage.swift */,
+				82E785F127C334ED00F7AF5A /* SearchChinesePage.swift */,
+				824DD3C527BF443B00E0E279 /* SearchPage.swift */,
+				824DD3D927BF721300E0E279 /* UITrialPage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		82E785F627C3726B00F7AF5A /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				82C5935A26D4AB6800123429 /* translateTool.swift */,
+			);
+			path = Translate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,10 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82627E1926CFADDB0073983A /* Build configuration list for PBXNativeTarget "LocalizabalTool" */;
 			buildPhases = (
+				92B4BD64CC682336D3CF8833 /* [CP] Check Pods Manifest.lock */,
 				82627E0526CFADDB0073983A /* Sources */,
 				82627E0626CFADDB0073983A /* Frameworks */,
 				82627E0726CFADDB0073983A /* Resources */,
 				82830BD326E88F1E00735986 /* ShellScript */,
+				B86A22DB39C632F11983888D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,7 +185,7 @@
 		82627E0126CFADDA0073983A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					82627E0826CFADDB0073983A = {
@@ -187,6 +242,45 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nversion=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\"`\ncommit=`git rev-parse --short HEAD`\n\n# Warning \nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 wc -l | awk '$1 > 200 && $2 != \"total\" { print $2 \":1: warning: file more than 200 lines\" }'\n";
 		};
+		92B4BD64CC682336D3CF8833 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocalizabalTool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B86A22DB39C632F11983888D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocalizabalTool/Pods-LocalizabalTool-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocalizabalTool/Pods-LocalizabalTool-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocalizabalTool/Pods-LocalizabalTool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -195,10 +289,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				82627E0F26CFADDB0073983A /* ContentView.swift in Sources */,
+				82E785F427C33A5600F7AF5A /* PathPage.swift in Sources */,
+				824DD3C627BF443B00E0E279 /* SearchPage.swift in Sources */,
 				82627E0D26CFADDB0073983A /* LocalizabalToolApp.swift in Sources */,
-				82C5935F26D4E2BE00123429 /* RSGoogleTranslate.m in Sources */,
+				82E785F827C3926700F7AF5A /* Macro.swift in Sources */,
+				82E785F227C334ED00F7AF5A /* SearchChinesePage.swift in Sources */,
+				824DD3DA27BF721300E0E279 /* UITrialPage.swift in Sources */,
 				82BB0712275E0E0300E7E206 /* Func.swift in Sources */,
 				82C5935B26D4AB6800123429 /* translateTool.swift in Sources */,
+				82E785FA27C39AF500F7AF5A /* Extensions.swift in Sources */,
 				82BB070E275E0D0F00E7E206 /* FileOpenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +422,7 @@
 		};
 		82627E1A26CFADDB0073983A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 421E4B7B7625C4D1A45D1797 /* Pods-LocalizabalTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -350,6 +450,7 @@
 		};
 		82627E1B26CFADDB0073983A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6D115E599E893BCF4734A7F /* Pods-LocalizabalTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

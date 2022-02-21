@@ -8,6 +8,21 @@
 import Foundation
 import SwiftUI
 
+//!< 路径类型
+enum filePathType {
+    case filePathTypeImport
+    case filePathTypeExport
+}
+
+func getFilePathType(_ aType : filePathType) -> String {
+    switch aType {
+    case .filePathTypeImport:
+        return "项目路径"
+    case .filePathTypeExport:
+        return "结果导出路径"
+    }
+}
+
 //!< 封装获取路径视图
 struct FileOpenView : View {
     var aType: filePathType
@@ -32,16 +47,19 @@ struct FileOpenView : View {
                 .disabled(true)
             //按钮
             Button(action: {
-                let path = OpenFile(foldOnly: true)
-                NSLog("%@", path)
-                pathStr = path
-                if aType == filePathType.filePathTypeImport {
-                    importPath = path
-                } else if aType == filePathType.filePathTypeExportOriginal {
-                    exportOriginalPath = path
-                } else {
-                    exportLocalizeStrPath = path
+                let path = openFile(foldOnly: true)
+                if path == OPENFILEF_FAILED {
+                    return
                 }
+                pathStr = path
+                
+                switch aType {
+                case .filePathTypeImport:
+                    importPath = path
+                case .filePathTypeExport:
+                    exportPath = path
+                }
+                
             }) {
                 Text("选择")
             }.padding(.trailing, 20)
